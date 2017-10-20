@@ -1,5 +1,5 @@
 To use this repo, clone it and then run `npm start`. 
-You can also view it here: https://plnkr.co/edit/mpdh0VELdOqOz9fSBZiY?p=preview
+You can also view it [here](https://plnkr.co/edit/mpdh0VELdOqOz9fSBZiY?p=preview).
 
 
 ## Objective
