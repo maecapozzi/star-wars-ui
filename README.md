@@ -1,8 +1,8 @@
 **Objectives**
 
-Use the Star Wars API swapi.co to generate a list of the films that a particular character appears in
+https://plnkr.co/edit/mpdh0VELdOqOz9fSBZiY?p=preview
 
-Use plunker to build a working example.
+Use the [Star Wars API](https://plnkr.co/edit/mpdh0VELdOqOz9fSBZiY?p=preview)to generate a list of the films that a particular character appears in
 
 * Allow users to choose a character from the provided JSON file
 * Upon selection of a character, the UI should update to display information about each of the films that that character appears in. Minimally: Title, and formatted ('Thursday, May 19 2005') release date
