@@ -1,9 +1,8 @@
 To use this repo, clone it and then run `npm start`. 
+You can also view it here: https://plnkr.co/edit/mpdh0VELdOqOz9fSBZiY?p=preview
 
-**Objectives**
 
-https://plnkr.co/edit/mpdh0VELdOqOz9fSBZiY?p=preview
-
+## Objective
 Use the [Star Wars API](https://plnkr.co/edit/mpdh0VELdOqOz9fSBZiY?p=preview) to generate a list of the films that a particular character appears in
 
 * Allow users to choose a character from the provided JSON file
