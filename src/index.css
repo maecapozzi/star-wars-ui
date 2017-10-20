@@ -1,0 +1,53 @@
+body {
+  background-color: #707A8F;
+  margin: 0 auto;
+}
+
+.app {
+  color: #ffffff;
+  font-family: "Roboto";
+  height: 100%;
+  margin: 0 20px;
+  opacity: .8;
+}
+
+.select {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: white;
+  font-size: 16px;
+  height: 3em;
+  padding: 5px 20px;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+.select__container {
+  background: #3E475C;
+  width: 25em;
+  overflow: hidden;
+}
+
+.search-results {
+  background-color: #52C3BB;
+  border-radius: 3px;
+  color: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  width: 22.5em;
+}
+
+.search-results__p {
+  color: #ffffff;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+
+.search-results__film {
+  font-style: italic;
+}
+
+.errors {
+  color: #ffffff;
+}
