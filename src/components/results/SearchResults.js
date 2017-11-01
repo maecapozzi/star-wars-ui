@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchResult from './SearchResult'
 
-const SearchResults = props => {
+export const SearchResults = props => {
   if (!props.films) {
     return null
   } else {
@@ -12,5 +12,3 @@ const SearchResults = props => {
     )
   }
 }
-
-export default SearchResults
