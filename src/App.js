@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
 
 import SelectForm from './components/selects/SelectForm'
 import { SearchResults } from './components/results'
 
-class App extends React.Component {
+class App extends Component {
   constructor () {
     super()
 
@@ -21,8 +21,13 @@ class App extends React.Component {
   }
 
   handleChange (event) {
-    this.setState({ errors: '', value: event.target.value })
     let selectedCharacter = event.target.value
+
+    this.setState({ 
+      errors: '', 
+      value: event.target.value 
+    })
+
     this.state.characters.map(character => {
       if (character.name === selectedCharacter) {
         this.getFilmUrls(character.url)
@@ -67,10 +72,9 @@ class App extends React.Component {
   }
 
   formatDate (date) {
-    const newDate = new Date(date)
-    const dateLast = newDate.toISOString().substring(0, 10)
+    const newDate = new Date(date).toISOString().substring(0, 10)
     const format = { month: 'long', day: 'numeric', year: 'numeric', weekday: 'long' }
-    return new Date(dateLast).toLocaleDateString('en-US', format)
+    return new Date(newDate).toLocaleDateString('en-US', format)
   }
 
   componentWillMount () {
@@ -106,7 +110,6 @@ class App extends React.Component {
           <p>{this.state.errors}</p>
           <SelectForm characters={this.state.characters} handleChange={this.handleChange} />
           <SearchResults
-            selectedCharacter={this.state.selectedCharacter}
             films={this.state.films}
           />
         </div>

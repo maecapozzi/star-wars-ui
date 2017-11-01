@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 class SelectForm extends Component {
   constructor (props) {
@@ -44,3 +45,10 @@ class SelectForm extends Component {
 }
 
 export default SelectForm
+
+SelectForm.propTypes = { 
+  characters: PropTypes.array.isRequired, 
+  handleChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired
+}
+
