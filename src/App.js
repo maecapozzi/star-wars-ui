@@ -10,7 +10,7 @@ class App extends React.Component {
 
     this.url = './characters.json'
     this.state = {
-      characters: [], 
+      characters: [],
       selectedCharacter: ''
     }
 
@@ -42,7 +42,7 @@ class App extends React.Component {
       }
     }).catch(error => {
       if (error.response.status === 404) {
-        const errorMessage = "The request has failed."
+        const errorMessage = 'The request has failed.'
         this.setState({ errors: errorMessage })
       }
     })
@@ -59,7 +59,7 @@ class App extends React.Component {
         const films = responses.reduce((filmArray, response) => {
           const { episode_id, title, created } = response.data
           filmArray.push({ episode_id, title, date: this.formatDate(created) })
-          return filmArray;
+          return filmArray
         }, [])
         this.setState({ films })
       })
@@ -69,8 +69,8 @@ class App extends React.Component {
   formatDate (date) {
     const newDate = new Date(date)
     const dateLast = newDate.toISOString().substring(0, 10)
-    const format = { month : 'long', day : 'numeric', year: 'numeric', weekday: 'long' };
-    return new Date(dateLast).toLocaleDateString('en-US', format);
+    const format = { month: 'long', day: 'numeric', year: 'numeric', weekday: 'long' }
+    return new Date(dateLast).toLocaleDateString('en-US', format)
   }
 
   componentWillMount () {
@@ -91,17 +91,17 @@ class App extends React.Component {
   }
 
   render () {
-    if (this.state.errors) { 
+    if (this.state.errors) {
       return (
-        <div className="app">
+        <div className='app'>
           <h1>Star Wars Character Search</h1>
           <p>{this.state.errors}</p>
           <SelectForm characters={this.state.characters} handleChange={this.handleChange} />
         </div>
       )
-    } else { 
+    } else {
       return (
-        <div className="app">
+        <div className='app'>
           <h1>Star Wars Character Search</h1>
           <p>{this.state.errors}</p>
           <SelectForm characters={this.state.characters} handleChange={this.handleChange} />
@@ -115,4 +115,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App

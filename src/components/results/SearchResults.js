@@ -6,7 +6,7 @@ export const SearchResults = props => {
     return null
   } else {
     return (
-      <div className="search-results">
+      <div className='search-results'>
         {props.films.map(film => <SearchResult key={film.episode_id} title={film.title} date={film.date} />)}
       </div>
     )
