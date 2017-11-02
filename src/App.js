@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import SelectForm from './components/selects/SelectForm'
 import { SearchResults } from './components/results'
+import { loadCharacters } from './lib/selectService'
+import { setCharacters } from './lib/selectHelper'
 
 class App extends Component {
   constructor () {
@@ -23,9 +25,9 @@ class App extends Component {
   handleChange (event) {
     let selectedCharacter = event.target.value
 
-    this.setState({ 
-      errors: '', 
-      value: event.target.value 
+    this.setState({
+      errors: '',
+      value: event.target.value
     })
 
     this.state.characters.map(character => {
@@ -77,19 +79,12 @@ class App extends Component {
     return new Date(newDate).toLocaleDateString('en-US', format)
   }
 
-  componentWillMount () {
-    axios.get(this.url)
-    .then((response) => {
-      const characters = response.data.characters.reduce((characterArray, character) => {
-        const { id, name, url } = character
-        characterArray.push({ id, name, url })
-        return characterArray
-      }, [])
-      this.setState({ characters })
-    })
-    .catch((error) => {
-      const errorMessage = "I couldn't get the characters. Please refresh the page."
-      this.setState({ errors: errorMessage })
+  componentDidMount () {
+    loadCharacters()
+      .then(characterData => { 
+        const characters = setCharacters(characterData)
+        
+        this.setState({ characters })
     })
   }
 
