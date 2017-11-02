@@ -81,11 +81,10 @@ class App extends Component {
     axios.get(this.url)
     .then((response) => {
       const characters = response.data.characters.reduce((characterArray, character) => {
-        const { name, url } = character
-        characterArray.push({ name, url })
+        const { id, name, url } = character
+        characterArray.push({ id, name, url })
         return characterArray
       }, [])
-
       this.setState({ characters })
     })
     .catch((error) => {

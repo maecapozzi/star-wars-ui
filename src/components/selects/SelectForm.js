@@ -24,8 +24,8 @@ class SelectForm extends Component {
   }
 
   createSelectOptions () {
-    const characters = this.props.characters.map(character => <option value={character.name}>{character.name}</option>)
-    return [<option>Please select a character</option>, ...characters]
+    const characters = this.props.characters.map(character => <option key={character.id} value={character.name}>{character.name}</option>)
+    return [<option key={0}>Please select a character</option>, ...characters]
   }
 
   render () {
@@ -49,6 +49,6 @@ export default SelectForm
 SelectForm.propTypes = { 
   characters: PropTypes.array.isRequired, 
   handleChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired
+  value: PropTypes.string
 }
 
