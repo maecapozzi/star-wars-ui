@@ -1,4 +1,4 @@
-export const setCharacters = array => { 
+export const setCharacters = array => {
   const characters = array.reduce((characterArray, character) => {
     const { name, url } = character
     characterArray.push({ name, url })
